@@ -27,4 +27,5 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `src/places.ts` 의 121곳 목록은 SeoulRtd 대시보드 내부 API 에서 확보한 생성 데이터 (이름+분류만, POI 코드 없음). 갱신 방법은 context-notes.md 참고.
 - '광화문' 은 광화문·덕수궁/광화문광장 복수 일치. 테스트에서 유일 부분 일치가 필요하면 '난지' 를 쓴다.
 - 테스트는 라이브 API 를 호출하지 않는다. fixture 재캡처: `http://openapi.seoul.go.kr:8088/sample/json/citydata/1/5/광화문·덕수궁` (샘플키는 이 장소만 가능).
+- 데이터 저작권은 서울특별시, 공공누리 제1유형(출처표시). 데이터를 노출하는 기능을 만들 때 출처표시("출처: 서울 열린데이터광장(서울특별시)")를 빼먹지 말 것. 코드는 MIT.
 - `checklist.md` / `context-notes.md` 는 gitignore 된 로컬 작업 메모다. 작업 시작 전에 읽고, 결정 사항을 덧붙일 것.

@@ -48,3 +48,8 @@ pnpm build       # tsc → dist/
 ## 릴리즈
 
 main 에 push 되면 GitHub Actions 가 conventional commit 타입으로 버전을 결정해 npm 에 배포합니다. repo secret 에 `NPM_TOKEN` 이 필요합니다.
+
+## 라이선스
+
+- 이 패키지의 코드는 MIT 라이선스입니다.
+- 제공되는 데이터의 저작권은 **서울특별시**에 있으며, [공공누리 제1유형(출처표시)](https://www.kogl.or.kr/info/license.do)에 따라 상업적 이용과 변경이 가능합니다. 데이터를 이용할 때는 출처를 표시해야 합니다. 예: "출처: 서울 열린데이터광장(서울특별시)"
