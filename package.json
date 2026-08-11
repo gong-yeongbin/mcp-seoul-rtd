@@ -1,0 +1,51 @@
+{
+  "name": "mcp-seoul-rtd",
+  "version": "0.1.0",
+  "description": "MCP server for Seoul real-time data",
+  "license": "MIT",
+  "author": "공영빈 <youngbin816@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gong-yeongbin/mcp-server-seoul-rtd.git"
+  },
+  "homepage": "https://github.com/gong-yeongbin/mcp-server-seoul-rtd#readme",
+  "bugs": {
+    "url": "https://github.com/gong-yeongbin/mcp-server-seoul-rtd/issues"
+  },
+  "keywords": [
+    "mcp",
+    "modelcontextprotocol",
+    "seoul",
+    "realtime",
+    "claude"
+  ],
+  "type": "module",
+  "bin": {
+    "mcp-seoul-rtd": "./dist/index.js"
+  },
+  "files": [
+    "dist/**/*.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.29.3",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test test/*.test.ts",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.0.0",
+    "zod": "^4.2.0"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "^2.0.0",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.7.0"
+  }
+}

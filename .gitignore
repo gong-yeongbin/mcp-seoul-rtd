@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+*.log
+.claude/settings.local.json
+checklist.md
+context-notes.md
+.idea/
