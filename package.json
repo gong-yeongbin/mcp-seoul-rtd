@@ -6,11 +6,11 @@
   "author": "공영빈 <youngbin816@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gong-yeongbin/mcp-server-seoul-rtd.git"
+    "url": "git+https://github.com/gong-yeongbin/mcp-seoul-rtd.git"
   },
-  "homepage": "https://github.com/gong-yeongbin/mcp-server-seoul-rtd#readme",
+  "homepage": "https://github.com/gong-yeongbin/mcp-seoul-rtd#readme",
   "bugs": {
-    "url": "https://github.com/gong-yeongbin/mcp-server-seoul-rtd/issues"
+    "url": "https://github.com/gong-yeongbin/mcp-seoul-rtd/issues"
   },
   "keywords": [
     "mcp",
@@ -45,7 +45,10 @@
   },
   "devDependencies": {
     "@modelcontextprotocol/client": "^2.0.0",
+    "@release-it/conventional-changelog": "^12.0.0",
     "@types/node": "^24.0.0",
+    "conventional-changelog-conventionalcommits": "^10.3.0",
+    "release-it": "^21.0.2",
     "typescript": "^5.7.0"
   }
 }

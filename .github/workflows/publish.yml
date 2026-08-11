@@ -1,0 +1,97 @@
+# main 에 push 된 커밋 타입(feat/fix/BREAKING CHANGE)으로 버전을 결정해
+# 커밋·태그를 만들고 npm registry 에 배포하는 workflow.
+# 올릴 버전이 없으면(chore/ci/docs/refactor 만인 경우) 조용히 건너뛴다.
+name: release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: '실제 배포 없이 결정될 버전만 확인'
+        type: boolean
+        required: false
+        default: false
+
+# 릴리스는 절대 병렬로 돌면 안 된다. 진행 중인 run 을 취소하면
+# 태그는 올라갔는데 publish 는 안 된 상태가 생기므로 취소하지 않고 줄을 세운다.
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    # release-it 이 만든 커밋으로 스스로 재실행되는 것을 막는다.
+    # GITHUB_TOKEN 으로 push 한 커밋은 원래 workflow 를 트리거하지 않지만,
+    # 나중에 PAT/GitHub App 토큰으로 바꿀 때를 대비한 방어선이다.
+    # 이 문자열은 .release-it.json 의 git.commitMessage 와 짝을 이룬다.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      !startsWith(github.event.head_commit.message, 'chore: release v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # conventional-changelog 플러그인이 마지막 태그 이후 커밋을 읽으므로
+          # 전체 히스토리와 태그가 필요하다.
+          fetch-depth: 0
+          # push 이벤트는 SHA 를 detached HEAD 로 체크아웃한다.
+          # release-it 의 requireUpstream 을 만족시키려면 브랜치를 받아야 한다.
+          ref: ${{ github.ref_name }}
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+          registry-url: 'https://registry.npmjs.org'
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm run typecheck
+
+      - run: pnpm test
+
+      - name: git identity 설정
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      # 앞선 run 이 release 커밋을 올렸을 수 있으므로 최신 상태로 맞춘다.
+      - name: 최신 main 반영
+        run: git pull --rebase origin ${{ github.ref_name }}
+
+      # release-it 은 "올릴 버전 없음" 일 때도 exit 0 이므로
+      # package.json 의 version 변화로 배포 여부를 판단한다.
+      - name: 버전 결정 및 커밋·태그 push
+        id: release
+        run: |
+          before="$(node -p 'require("./package.json").version')"
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            pnpm exec release-it --ci --dry-run
+          else
+            pnpm exec release-it --ci
+          fi
+          after="$(node -p 'require("./package.json").version')"
+          if [ "$before" = "$after" ]; then
+            echo "올릴 버전이 없습니다. 배포를 건너뜁니다. (현재 $before)"
+            echo "released=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "$before -> $after 로 릴리스합니다."
+            echo "released=true" >> "$GITHUB_OUTPUT"
+            echo "version=$after" >> "$GITHUB_OUTPUT"
+          fi
+
+      - if: steps.release.outputs.released == 'true'
+        run: pnpm run build
+
+      - if: steps.release.outputs.released == 'true'
+        run: npm publish --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
