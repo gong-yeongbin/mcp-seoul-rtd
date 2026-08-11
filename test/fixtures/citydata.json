@@ -1,0 +1,842 @@
+{
+ "list_total_count": 1,
+ "RESULT": {
+  "RESULT.CODE": "INFO-000",
+  "RESULT.MESSAGE": "정상 처리되었습니다."
+ },
+ "CITYDATA": {
+  "AREA_NM": "광화문·덕수궁",
+  "AREA_CD": "POI009",
+  "LIVE_PPLTN_STTS": [
+   {
+    "AREA_NM": "광화문·덕수궁",
+    "AREA_CD": "POI009",
+    "AREA_CONGEST_LVL": "보통",
+    "AREA_CONGEST_MSG": "사람이 몰려있을 수 있지만 크게 붐비지는 않아요. 도보 이동에 큰 제약이 없어요.",
+    "AREA_PPLTN_MIN": "38000",
+    "AREA_PPLTN_MAX": "40000",
+    "MALE_PPLTN_RATE": "50.5",
+    "FEMALE_PPLTN_RATE": "49.5",
+    "PPLTN_RATE_0": "0.5",
+    "PPLTN_RATE_10": "2.7",
+    "PPLTN_RATE_20": "17.5",
+    "PPLTN_RATE_30": "23.9",
+    "PPLTN_RATE_40": "26.4",
+    "PPLTN_RATE_50": "19.4",
+    "PPLTN_RATE_60": "6.6",
+    "PPLTN_RATE_70": "2.9",
+    "RESNT_PPLTN_RATE": "40.8",
+    "NON_RESNT_PPLTN_RATE": "59.2",
+    "REPLACE_YN": "N",
+    "PPLTN_TIME": "2026-08-11 17:30",
+    "FCST_YN": "Y",
+    "FCST_PPLTN": [
+     {
+      "FCST_TIME": "2026-08-11 19:00",
+      "FCST_CONGEST_LVL": "보통",
+      "FCST_PPLTN_MIN": "32000",
+      "FCST_PPLTN_MAX": "34000"
+     },
+     {
+      "FCST_TIME": "2026-08-11 20:00",
+      "FCST_CONGEST_LVL": "보통",
+      "FCST_PPLTN_MIN": "24000",
+      "FCST_PPLTN_MAX": "26000"
+     },
+     {
+      "FCST_TIME": "2026-08-11 21:00",
+      "FCST_CONGEST_LVL": "여유",
+      "FCST_PPLTN_MIN": "18000",
+      "FCST_PPLTN_MAX": "20000"
+     },
+     {
+      "FCST_TIME": "2026-08-11 22:00",
+      "FCST_CONGEST_LVL": "여유",
+      "FCST_PPLTN_MIN": "12000",
+      "FCST_PPLTN_MAX": "14000"
+     },
+     {
+      "FCST_TIME": "2026-08-11 23:00",
+      "FCST_CONGEST_LVL": "여유",
+      "FCST_PPLTN_MIN": "9500",
+      "FCST_PPLTN_MAX": "10000"
+     },
+     {
+      "FCST_TIME": "2026-08-12 00:00",
+      "FCST_CONGEST_LVL": "여유",
+      "FCST_PPLTN_MIN": "6500",
+      "FCST_PPLTN_MAX": "7000"
+     },
+     {
+      "FCST_TIME": "2026-08-12 01:00",
+      "FCST_CONGEST_LVL": "여유",
+      "FCST_PPLTN_MIN": "4500",
+      "FCST_PPLTN_MAX": "5000"
+     },
+     {
+      "FCST_TIME": "2026-08-12 02:00",
+      "FCST_CONGEST_LVL": "여유",
+      "FCST_PPLTN_MIN": "3500",
+      "FCST_PPLTN_MAX": "4000"
+     }
+    ]
+   }
+  ],
+  "ROAD_TRAFFIC_STTS": {
+   "AVG_ROAD_DATA": {
+    "ROAD_MSG": "해당 장소로 이동·진입시 시간이 오래 걸릴 수 있어요.",
+    "ROAD_TRAFFIC_IDX": "정체",
+    "ROAD_TRAFFIC_SPD": 13,
+    "ROAD_TRAFFIC_TIME": "2026-08-11 18:00"
+   },
+   "ROAD_TRAFFIC_STTS": [
+    {
+     "LINK_ID": "1000000301",
+     "ROAD_NM": "종로",
+     "START_ND_CD": "1000081900",
+     "START_ND_NM": "종로1가 82-2",
+     "START_ND_XY": "126.9798999832241719_37.5701535606807582",
+     "END_ND_CD": "1000008607",
+     "END_ND_NM": "종로구청입구교차로",
+     "END_ND_XY": "126.9793805233784241_37.5701494116837509",
+     "DIST": "46.0",
+     "SPD": 15.0,
+     "IDX": "서행",
+     "XYLIST": "126.9793805233784241_37.5701494116837509|126.9798999832241719_37.5701535606807582"
+    },
+    {
+     "LINK_ID": "1000000401",
+     "ROAD_NM": "종로",
+     "START_ND_CD": "1000008606",
+     "START_ND_NM": "종로구청입구교차로",
+     "START_ND_XY": "126.9793844377634713_37.5702575676490582",
+     "END_ND_CD": "1000008905",
+     "END_ND_NM": "SK빌딩",
+     "END_ND_XY": "126.9809530025248421_37.5702700889503021",
+     "DIST": "139.0",
+     "SPD": 3.0,
+     "IDX": "정체",
+     "XYLIST": "126.9809530025248421_37.5702700889503021|126.9798986206276368_37.5702616744867512|126.9793844377634713_37.5702575676490582"
+    }
+   ]
+  },
+  "PRK_STTS": [
+   {
+    "PRK_NM": "백영북창빌딩",
+    "PRK_CD": "3202173",
+    "PRK_TYPE": "BS",
+    "CPCTY": "24",
+    "CUR_PRK_CNT": "",
+    "CUR_PRK_TIME": "",
+    "CUR_PRK_YN": "N",
+    "PAY_YN": "Y",
+    "RATES": "2000",
+    "TIME_RATES": "30",
+    "ADD_RATES": "1000",
+    "ADD_TIME_RATES": "10",
+    "ADDRESS": "중구 북창동 18-9",
+    "ROAD_ADDR": "",
+    "LNG": "126.977556",
+    "LAT": "37.562981"
+   },
+   {
+    "PRK_NM": "우성빌딩 주차장",
+    "PRK_CD": "3202180",
+    "PRK_TYPE": "BS",
+    "CPCTY": "28",
+    "CUR_PRK_CNT": "",
+    "CUR_PRK_TIME": "",
+    "CUR_PRK_YN": "N",
+    "PAY_YN": "Y",
+    "RATES": "3000",
+    "TIME_RATES": "30",
+    "ADD_RATES": "1000",
+    "ADD_TIME_RATES": "10",
+    "ADDRESS": "중구 북창동 35-0",
+    "ROAD_ADDR": "",
+    "LNG": "126.97801914",
+    "LAT": "37.56351645"
+   },
+   {
+    "PRK_NM": "세종대로3 관광버스 승하차 허용 구간(시)",
+    "PRK_CD": "1582645",
+    "PRK_TYPE": "NS",
+    "CPCTY": "2",
+    "CUR_PRK_CNT": "",
+    "CUR_PRK_TIME": "",
+    "CUR_PRK_YN": "N",
+    "PAY_YN": "N",
+    "RATES": "0",
+    "TIME_RATES": "0",
+    "ADD_RATES": "0",
+    "ADD_TIME_RATES": "0",
+    "ADDRESS": "중구 태평로2가 113-1 (신협 ~ 세븐일레븐)",
+    "ROAD_ADDR": "",
+    "LNG": "126.976973025",
+    "LAT": "37.563362585"
+   },
+   {
+    "PRK_NM": "극동빌딩",
+    "PRK_CD": "3201870",
+    "PRK_TYPE": "BS",
+    "CPCTY": "25",
+    "CUR_PRK_CNT": "",
+    "CUR_PRK_TIME": "",
+    "CUR_PRK_YN": "N",
+    "PAY_YN": "Y",
+    "RATES": "2000",
+    "TIME_RATES": "30",
+    "ADD_RATES": "1000",
+    "ADD_TIME_RATES": "10",
+    "ADDRESS": "중구 소공동 112-44",
+    "ROAD_ADDR": "",
+    "LNG": "126.978651",
+    "LAT": "37.562901"
+   },
+   {
+    "PRK_NM": "한화생명 태평로사옥",
+    "PRK_CD": "3202430",
+    "PRK_TYPE": "BS",
+    "CPCTY": "484",
+    "CUR_PRK_CNT": "",
+    "CUR_PRK_TIME": "",
+    "CUR_PRK_YN": "N",
+    "PAY_YN": "Y",
+    "RATES": "3000",
+    "TIME_RATES": "30",
+    "ADD_RATES": "1000",
+    "ADD_TIME_RATES": "10",
+    "ADDRESS": "중구 태평로2가 43-0",
+    "ROAD_ADDR": "",
+    "LNG": "126.977563",
+    "LAT": "37.564181"
+   },
+   {
+    "PRK_NM": "세종대로2 관광버스 승하차 허용 구간(시)",
+    "PRK_CD": "1584732",
+    "PRK_TYPE": "NS",
+    "CPCTY": "2",
+    "CUR_PRK_CNT": "",
+    "CUR_PRK_TIME": "",
+    "CUR_PRK_YN": "N",
+    "PAY_YN": "N",
+    "RATES": "0",
+    "TIME_RATES": "0",
+    "ADD_RATES": "0",
+    "ADD_TIME_RATES": "0",
+    "ADDRESS": "중구 정동 5-5 (정동 5-5(시청역 2번 출구 앞)",
+    "ROAD_ADDR": "",
+    "LNG": "126.97694016",
+    "LAT": "37.565996479999995"
+   },
+   {
+    "PRK_NM": "프리미어플레이스 주차장",
+    "PRK_CD": "3201494",
+    "PRK_TYPE": "BS",
+    "CPCTY": "87",
+    "CUR_PRK_CNT": "",
+    "CUR_PRK_TIME": "",
+    "CUR_PRK_YN": "N",
+    "PAY_YN": "Y",
+    "RATES": "2000",
+    "TIME_RATES": "30",
+    "ADD_RATES": "1000",
+    "ADD_TIME_RATES": "10",
+    "ADDRESS": "중구 무교동 96-0",
+    "ROAD_ADDR": "",
+    "LNG": "126.978266",
+    "LAT": "37.568841"
+   },
+   {
+    "PRK_NM": "한국프레스센터주차장",
+    "PRK_CD": "3201679",
+    "PRK_TYPE": "BS",
+    "CPCTY": "266",
+    "CUR_PRK_CNT": "",
+    "CUR_PRK_TIME": "",
+    "CUR_PRK_YN": "N",
+    "PAY_YN": "Y",
+    "RATES": "3000",
+    "TIME_RATES": "30",
+    "ADD_RATES": "1200",
+    "ADD_TIME_RATES": "10",
+    "ADDRESS": "중구 태평로1가 25-0",
+    "ROAD_ADDR": "",
+    "LNG": "126.977861",
+    "LAT": "37.567553"
+   },
+   {
+    "PRK_NM": "뉴국제호텔 앞(구)",
+    "PRK_CD": "1512147",
+    "PRK_TYPE": "NS",
+    "CPCTY": "16",
+    "CUR_PRK_CNT": "",
+    "CUR_PRK_TIME": "",
+    "CUR_PRK_YN": "N",
+    "PAY_YN": "Y",
+    "RATES": "600",
+    "TIME_RATES": "5",
+    "ADD_RATES": "600",
+    "ADD_TIME_RATES": "5",
+    "ADDRESS": "중구 무교동 18-0",
+    "ROAD_ADDR": "",
+    "LNG": "126.97839675",
+    "LAT": "37.56818025"
+   },
+   {
+    "PRK_NM": "뉴국제호텔 앞(구)",
+    "PRK_CD": "1512147",
+    "PRK_TYPE": "NS",
+    "CPCTY": "2",
+    "CUR_PRK_CNT": "",
+    "CUR_PRK_TIME": "",
+    "CUR_PRK_YN": "N",
+    "PAY_YN": "Y",
+    "RATES": "600",
+    "TIME_RATES": "5",
+    "ADD_RATES": "600",
+    "ADD_TIME_RATES": "5",
+    "ADDRESS": "중구 무교동 45-0",
+    "ROAD_ADDR": "",
+    "LNG": "126.97852950000001",
+    "LAT": "37.568073999999996"
+   },
+   {
+    "PRK_NM": "한화생명 소공동사옥",
+    "PRK_CD": "3201861",
+    "PRK_TYPE": "BS",
+    "CPCTY": "459",
+    "CUR_PRK_CNT": "",
+    "CUR_PRK_TIME": "",
+    "CUR_PRK_YN": "N",
+    "PAY_YN": "Y",
+    "RATES": "3000",
+    "TIME_RATES": "30",
+    "ADD_RATES": "1000",
+    "ADD_TIME_RATES": "10",
+    "ADDRESS": "중구 소공동 110-0",
+    "ROAD_ADDR": "",
+    "LNG": "126.978553",
+    "LAT": "37.564168"
+   },
+   {
+    "PRK_NM": "한국정보사회진흥원",
+    "PRK_CD": "3201492",
+    "PRK_TYPE": "BS",
+    "CPCTY": "93",
+    "CUR_PRK_CNT": "",
+    "CUR_PRK_TIME": "",
+    "CUR_PRK_YN": "N",
+    "PAY_YN": "Y",
+    "RATES": "2000",
+    "TIME_RATES": "30",
+    "ADD_RATES": "1000",
+    "ADD_TIME_RATES": "10",
+    "ADDRESS": "중구 무교동 77-0",
+    "ROAD_ADDR": "",
+    "LNG": "126.978901",
+    "LAT": "37.568815"
+   }
+  ],
+  "SUB_STTS": [
+   {
+    "SUB_STN_NM": "경복궁",
+    "SUB_STN_LINE": "3",
+    "SUB_STN_RADDR": "서울특별시 종로구 사직로 지하130(적선동)",
+    "SUB_STN_JIBUN": null,
+    "SUB_STN_X": "126.97353",
+    "SUB_STN_Y": "37.575762",
+    "SUB_DETAIL": [
+     {
+      "SUB_NT_STN": "1003000326",
+      "SUB_BF_STN": "1003000328",
+      "SUB_ROUTE_NM": "대화행 - 독립문방면",
+      "SUB_LINE": "3호선",
+      "SUB_ORD": "01002대화0",
+      "SUB_DIR": "상행",
+      "SUB_TERMINAL": "대화",
+      "SUB_ARVTIME": "240",
+      "SUB_ARMG1": "4분 후 (종로3가)",
+      "SUB_ARMG2": "종로3가",
+      "SUB_ARVINFO": "운행중"
+     },
+     {
+      "SUB_NT_STN": "1003000326",
+      "SUB_BF_STN": "1003000328",
+      "SUB_ROUTE_NM": "구파발행 - 독립문방면",
+      "SUB_LINE": "3호선",
+      "SUB_ORD": "02005구파발0",
+      "SUB_DIR": "상행",
+      "SUB_TERMINAL": "구파발",
+      "SUB_ARVTIME": "540",
+      "SUB_ARMG1": "9분 후 (동대입구)",
+      "SUB_ARMG2": "동대입구",
+      "SUB_ARVINFO": "운행중"
+     },
+     {
+      "SUB_NT_STN": "1003000328",
+      "SUB_BF_STN": "1003000326",
+      "SUB_ROUTE_NM": "오금행 - 안국방면",
+      "SUB_LINE": "3호선",
+      "SUB_ORD": "11000오금0",
+      "SUB_DIR": "하행",
+      "SUB_TERMINAL": "오금",
+      "SUB_ARVTIME": "0",
+      "SUB_ARMG1": "경복궁 도착",
+      "SUB_ARMG2": "경복궁",
+      "SUB_ARVINFO": "도착"
+     },
+     {
+      "SUB_NT_STN": "1003000328",
+      "SUB_BF_STN": "1003000326",
+      "SUB_ROUTE_NM": "오금행 - 안국방면",
+      "SUB_LINE": "3호선",
+      "SUB_ORD": "12003오금0",
+      "SUB_DIR": "하행",
+      "SUB_TERMINAL": "오금",
+      "SUB_ARVTIME": "390",
+      "SUB_ARMG1": "6분 30초 후 (홍제)",
+      "SUB_ARMG2": "홍제",
+      "SUB_ARVINFO": "운행중"
+     }
+    ],
+    "SUB_FACIINFO": []
+   },
+   {
+    "SUB_STN_NM": "시청",
+    "SUB_STN_LINE": "1",
+    "SUB_STN_RADDR": "서울특별시 중구 세종대로 지하101(정동)",
+    "SUB_STN_JIBUN": null,
+    "SUB_STN_X": "126.977088",
+    "SUB_STN_Y": "37.565715",
+    "SUB_DETAIL": [
+     {
+      "SUB_NT_STN": "1001000131",
+      "SUB_BF_STN": "1001000133",
+      "SUB_ROUTE_NM": "광운대행 - 종각방면",
+      "SUB_LINE": "1호선",
+      "SUB_ORD": "01000광운대0",
+      "SUB_DIR": "상행",
+      "SUB_TERMINAL": "광운대",
+      "SUB_ARVTIME": "0",
+      "SUB_ARMG1": "시청 출발",
+      "SUB_ARMG2": "시청",
+      "SUB_ARVINFO": "출발"
+     },
+     {
+      "SUB_NT_STN": "1001000131",
+      "SUB_BF_STN": "1001000133",
+      "SUB_ROUTE_NM": "청량리행 - 종각방면",
+      "SUB_LINE": "1호선",
+      "SUB_ORD": "01017청량리0",
+      "SUB_DIR": "상행",
+      "SUB_TERMINAL": "청량리",
+      "SUB_ARVTIME": "0",
+      "SUB_ARMG1": "[17]번째 전역 (금정)",
+      "SUB_ARMG2": "금정",
+      "SUB_ARVINFO": "운행중"
+     },
+     {
+      "SUB_NT_STN": "1001000131",
+      "SUB_BF_STN": "1001000133",
+      "SUB_ROUTE_NM": "광운대행 - 종각방면",
+      "SUB_LINE": "1호선",
+      "SUB_ORD": "02002광운대0",
+      "SUB_DIR": "상행",
+      "SUB_TERMINAL": "광운대",
+      "SUB_ARVTIME": "0",
+      "SUB_ARMG1": "[2]번째 전역 (남영)",
+      "SUB_ARMG2": "남영",
+      "SUB_ARVINFO": "운행중"
+     },
+     {
+      "SUB_NT_STN": "1001000131",
+      "SUB_BF_STN": "1001000133",
+      "SUB_ROUTE_NM": "청량리행 - 종각방면",
+      "SUB_LINE": "1호선",
+      "SUB_ORD": "02044청량리0",
+      "SUB_DIR": "상행",
+      "SUB_TERMINAL": "청량리",
+      "SUB_ARVTIME": "0",
+      "SUB_ARMG1": "[44]번째 전역 (신창)",
+      "SUB_ARMG2": "신창",
+      "SUB_ARVINFO": "운행중"
+     }
+    ],
+    "SUB_FACIINFO": []
+   }
+  ],
+  "LIVE_SUB_PPLTN": {
+   "SUB_ACML_GTON_PPLTN_MIN": "56600",
+   "SUB_ACML_GTON_PPLTN_MAX": "56700",
+   "SUB_ACML_GTOFF_PPLTN_MIN": "119900",
+   "SUB_ACML_GTOFF_PPLTN_MAX": "120000",
+   "SUB_30WTHN_GTON_PPLTN_MIN": "9800",
+   "SUB_30WTHN_GTON_PPLTN_MAX": "9900",
+   "SUB_30WTHN_GTOFF_PPLTN_MIN": "2500",
+   "SUB_30WTHN_GTOFF_PPLTN_MAX": "2600",
+   "SUB_10WTHN_GTON_PPLTN_MIN": "3000",
+   "SUB_10WTHN_GTON_PPLTN_MAX": "3100",
+   "SUB_10WTHN_GTOFF_PPLTN_MIN": "800",
+   "SUB_10WTHN_GTOFF_PPLTN_MAX": "850",
+   "SUB_5WTHN_GTON_PPLTN_MIN": "2800",
+   "SUB_5WTHN_GTON_PPLTN_MAX": "2900",
+   "SUB_5WTHN_GTOFF_PPLTN_MIN": "750",
+   "SUB_5WTHN_GTOFF_PPLTN_MAX": "800",
+   "SUB_STN_CNT": "4",
+   "SUB_STN_TIME": "20260811"
+  },
+  "BUS_STN_STTS": [
+   {
+    "BUS_RESULT_MSG": "정상 호출되었습니다.",
+    "BUS_STN_ID": "100000384",
+    "BUS_ARS_ID": "1009",
+    "BUS_STN_NM": "광화문역",
+    "BUS_STN_X": "126.9763534416",
+    "BUS_STN_Y": "37.5701416811"
+   },
+   {
+    "BUS_RESULT_MSG": "정상 호출되었습니다.",
+    "BUS_STN_ID": "100000385",
+    "BUS_ARS_ID": "1010",
+    "BUS_STN_NM": "광화문역",
+    "BUS_STN_X": "126.9778802991",
+    "BUS_STN_Y": "37.5702396638"
+   },
+   {
+    "BUS_RESULT_MSG": "정상 호출되었습니다.",
+    "BUS_STN_ID": "100000022",
+    "BUS_ARS_ID": "1117",
+    "BUS_STN_NM": "경복궁",
+    "BUS_STN_X": "126.9787471496",
+    "BUS_STN_Y": "37.5755767894"
+   }
+  ],
+  "LIVE_BUS_PPLTN": {
+   "BUS_ACML_GTON_PPLTN_MIN": "18600",
+   "BUS_ACML_GTON_PPLTN_MAX": "18700",
+   "BUS_ACML_GTOFF_PPLTN_MIN": "25200",
+   "BUS_ACML_GTOFF_PPLTN_MAX": "25300",
+   "BUS_30WTHN_GTON_PPLTN_MIN": "1500",
+   "BUS_30WTHN_GTON_PPLTN_MAX": "1600",
+   "BUS_30WTHN_GTOFF_PPLTN_MIN": "1000",
+   "BUS_30WTHN_GTOFF_PPLTN_MAX": "1100",
+   "BUS_10WTHN_GTON_PPLTN_MIN": "500",
+   "BUS_10WTHN_GTON_PPLTN_MAX": "550",
+   "BUS_10WTHN_GTOFF_PPLTN_MIN": "350",
+   "BUS_10WTHN_GTOFF_PPLTN_MAX": "400",
+   "BUS_5WTHN_GTON_PPLTN_MIN": "200",
+   "BUS_5WTHN_GTON_PPLTN_MAX": "250",
+   "BUS_5WTHN_GTOFF_PPLTN_MIN": "150",
+   "BUS_5WTHN_GTOFF_PPLTN_MAX": "200",
+   "BUS_STN_CNT": "41",
+   "BUS_STN_TIME": "20260811"
+  },
+  "ACDNT_CNTRL_STTS": [
+   {
+    "ACDNT_OCCR_DT": "2026-06-03 21:00",
+    "EXP_CLR_DT": "2026-11-02 07:00",
+    "ACDNT_TYPE": "공사",
+    "ACDNT_ENG_TYPE": "Construction",
+    "ACDNT_DTYPE": "도로보수",
+    "ACDNT_ENG_DTYPE": "Road Repair",
+    "ACDNT_INFO": "소공로 보행환경 개선공사(차로축소| 보도확장) 소공로 서울광장~한국은행앞/양방향 하위1개차로 통제",
+    "ACDNT_ENG_INFO": "Sogong-ro Pedestrian Environment Improvement Project (Lane Reduction | Sidewalk Expansion) Sogong-ro: Seoul Plaza to in front of the Bank of Korea / One lower lane closed in both directions",
+    "ACDNT_X": 126.97864791274915,
+    "ACDNT_Y": 37.56470083559572,
+    "ACDNT_TIME": "2026-08-11 18:01"
+   }
+  ],
+  "SBIKE_STTS": [
+   {
+    "SBIKE_SPOT_NM": "310. 청계광장 옆",
+    "SBIKE_SPOT_ID": "ST-126",
+    "SBIKE_SHARED": "25",
+    "SBIKE_PARKING_CNT": "2",
+    "SBIKE_RACK_CNT": "8",
+    "SBIKE_X": 126.9774704,
+    "SBIKE_Y": 37.56887817
+   },
+   {
+    "SBIKE_SPOT_NM": "391. 시립미술관",
+    "SBIKE_SPOT_ID": "ST-977",
+    "SBIKE_SHARED": "38",
+    "SBIKE_PARKING_CNT": "3",
+    "SBIKE_RACK_CNT": "8",
+    "SBIKE_X": 126.97340393,
+    "SBIKE_Y": 37.56505203
+   }
+  ],
+  "WEATHER_STTS": [
+   {
+    "WEATHER_TIME": "2026-08-11 18:00",
+    "TEMP": "32.3",
+    "MAX_TEMP": "32.0",
+    "MIN_TEMP": "22.0",
+    "HUMIDITY": "45",
+    "WIND_DIRCT": "NNE",
+    "WIND_SPD": "3.6",
+    "PRECIPITATION": "-",
+    "PRECPT_TYPE": "없음",
+    "PCP_MSG": "비 또는 눈 소식이 없어요.",
+    "SUNRISE": "05:43",
+    "SUNSET": "19:31",
+    "UV_INDEX_LVL": "낮음",
+    "UV_INDEX": "1",
+    "UV_MSG": "햇볕에 민감한 분들은 자외선 차단제를 발라주세요.",
+    "PM25_INDEX": "좋음",
+    "PM25": "7",
+    "PM10_INDEX": "좋음",
+    "PM10": "12",
+    "AIR_IDX": "보통",
+    "AIR_IDX_MVL": "56.0",
+    "AIR_IDX_MAIN": "",
+    "AIR_MSG": "호흡기가 예민하신 분들은 몸상태 유의하며 활동해주세요.",
+    "FCST24HOURS": [
+     {
+      "FCST_DT": "202608111900",
+      "TEMP": "29",
+      "PRECIPITATION": "-",
+      "PRECPT_TYPE": "없음",
+      "RAIN_CHANCE": "0",
+      "SKY_STTS": "맑음"
+     },
+     {
+      "FCST_DT": "202608112000",
+      "TEMP": "28",
+      "PRECIPITATION": "-",
+      "PRECPT_TYPE": "없음",
+      "RAIN_CHANCE": "0",
+      "SKY_STTS": "구름많음"
+     },
+     {
+      "FCST_DT": "202608112100",
+      "TEMP": "27",
+      "PRECIPITATION": "-",
+      "PRECPT_TYPE": "없음",
+      "RAIN_CHANCE": "0",
+      "SKY_STTS": "맑음"
+     },
+     {
+      "FCST_DT": "202608112200",
+      "TEMP": "26",
+      "PRECIPITATION": "-",
+      "PRECPT_TYPE": "없음",
+      "RAIN_CHANCE": "0",
+      "SKY_STTS": "맑음"
+     },
+     {
+      "FCST_DT": "202608112300",
+      "TEMP": "26",
+      "PRECIPITATION": "-",
+      "PRECPT_TYPE": "없음",
+      "RAIN_CHANCE": "0",
+      "SKY_STTS": "맑음"
+     },
+     {
+      "FCST_DT": "202608120000",
+      "TEMP": "25",
+      "PRECIPITATION": "-",
+      "PRECPT_TYPE": "없음",
+      "RAIN_CHANCE": "0",
+      "SKY_STTS": "맑음"
+     },
+     {
+      "FCST_DT": "202608120100",
+      "TEMP": "24",
+      "PRECIPITATION": "-",
+      "PRECPT_TYPE": "없음",
+      "RAIN_CHANCE": "0",
+      "SKY_STTS": "맑음"
+     },
+     {
+      "FCST_DT": "202608120200",
+      "TEMP": "24",
+      "PRECIPITATION": "-",
+      "PRECPT_TYPE": "없음",
+      "RAIN_CHANCE": "0",
+      "SKY_STTS": "맑음"
+     }
+    ],
+    "NEWS_LIST": []
+   }
+  ],
+  "CHARGER_STTS": [
+   {
+    "STAT_NM": "NIA빌딩",
+    "STAT_ID": "HM110247",
+    "STAT_ADDR": "서울특별시 중구 청계천로 14",
+    "STAT_X": "126.9788175",
+    "STAT_Y": "37.5687892",
+    "STAT_USETIME": "24시간 이용가능",
+    "STAT_PARKPAY": "Y",
+    "STAT_LIMITYN": "N",
+    "STAT_LIMITDETAIL": "",
+    "STAT_KINDDETAIL": "기타",
+    "CHARGER_DETAILS": [
+     {
+      "CHARGER_ID": "02",
+      "CHARGER_TYPE": "AC완속",
+      "CHARGER_STAT": "충전중",
+      "STATUPDDT": "2026-08-11 08:52",
+      "LASTTSDT": "2026-08-10 08:42",
+      "LASTTEDT": "2026-08-10 10:30",
+      "NOWTSDT": "2026-08-11 08:51",
+      "OUTPUT": "7",
+      "METHOD": "단독"
+     }
+    ]
+   },
+   {
+    "STAT_NM": "NIA빌딩",
+    "STAT_ID": "HM110247",
+    "STAT_ADDR": "서울특별시 중구 청계천로 14",
+    "STAT_X": "126.9788175",
+    "STAT_Y": "37.5687892",
+    "STAT_USETIME": "24시간 이용가능",
+    "STAT_PARKPAY": "Y",
+    "STAT_LIMITYN": "N",
+    "STAT_LIMITDETAIL": " ",
+    "STAT_KINDDETAIL": "기타",
+    "CHARGER_DETAILS": [
+     {
+      "CHARGER_ID": "01",
+      "CHARGER_TYPE": "AC완속",
+      "CHARGER_STAT": "사용가능",
+      "STATUPDDT": "2026-08-10 14:54",
+      "LASTTSDT": "2026-08-10 08:04",
+      "LASTTEDT": "2026-08-10 13:22",
+      "NOWTSDT": null,
+      "OUTPUT": "7",
+      "METHOD": "단독"
+     }
+    ]
+   }
+  ],
+  "EVENT_STTS": [
+   {
+    "EVENT_NM": "2026 청춘만발",
+    "EVENT_PERIOD": "2026-08-10~2026-08-21",
+    "EVENT_PLACE": "국립정동극장 세실",
+    "EVENT_X": 126.975968516037,
+    "EVENT_Y": 37.566806928366,
+    "PAY_YN": null,
+    "THUMBNAIL": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=ac495d3dfa7146d6a76eb3cd28b66a68&thumb=Y",
+    "URL": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=158597&menuNo=200008",
+    "EVENT_ETC_DETAIL": "대한민국 청년 전통공연 예술인들을 응원해 주세요!"
+   },
+   {
+    "EVENT_NM": "2026 광화문광장 달빛요가",
+    "EVENT_PERIOD": "2026-08-05~2026-09-03",
+    "EVENT_PLACE": "광화문광장 육조마당",
+    "EVENT_X": 126.97663233107495,
+    "EVENT_Y": 37.57420522431554,
+    "PAY_YN": null,
+    "THUMBNAIL": "https://culture.seoul.go.kr/cmmn/file/getImage.do?atchFileId=09e71210e5494ef38bf8b987dc4d8665&thumb=Y",
+    "URL": "https://culture.seoul.go.kr/culture/culture/cultureEvent/view.do?cultcode=158943&menuNo=200010",
+    "EVENT_ETC_DETAIL": null
+   }
+  ],
+  "LIVE_CMRCL_STTS": {
+   "AREA_CMRCL_LVL": "보통",
+   "AREA_SH_PAYMENT_CNT": "149",
+   "AREA_SH_PAYMENT_AMT_MIN": 3000000,
+   "AREA_SH_PAYMENT_AMT_MAX": 3100000,
+   "CMRCL_RSB": [
+    {
+     "RSB_LRG_CTGR": "음식·음료",
+     "RSB_MID_CTGR": "한식",
+     "RSB_PAYMENT_LVL": "보통",
+     "RSB_SH_PAYMENT_CNT": 25,
+     "RSB_SH_PAYMENT_AMT_MIN": 700000,
+     "RSB_SH_PAYMENT_AMT_MAX": 750000,
+     "RSB_MCT_CNT": 374,
+     "RSB_MCT_TIME": "202607"
+    },
+    {
+     "RSB_LRG_CTGR": "음식·음료",
+     "RSB_MID_CTGR": "일식/중식/양식",
+     "RSB_PAYMENT_LVL": "한산한",
+     "RSB_SH_PAYMENT_CNT": 7,
+     "RSB_SH_PAYMENT_AMT_MIN": 250000,
+     "RSB_SH_PAYMENT_AMT_MAX": 300000,
+     "RSB_MCT_CNT": 181,
+     "RSB_MCT_TIME": "202607"
+    },
+    {
+     "RSB_LRG_CTGR": "음식·음료",
+     "RSB_MID_CTGR": "제과/커피/패스트푸드",
+     "RSB_PAYMENT_LVL": "보통",
+     "RSB_SH_PAYMENT_CNT": 22,
+     "RSB_SH_PAYMENT_AMT_MIN": 200000,
+     "RSB_SH_PAYMENT_AMT_MAX": 250000,
+     "RSB_MCT_CNT": 117,
+     "RSB_MCT_TIME": "202607"
+    },
+    {
+     "RSB_LRG_CTGR": "음식·음료",
+     "RSB_MID_CTGR": "기타요식",
+     "RSB_PAYMENT_LVL": "보통",
+     "RSB_SH_PAYMENT_CNT": 15,
+     "RSB_SH_PAYMENT_AMT_MIN": 350000,
+     "RSB_SH_PAYMENT_AMT_MAX": 400000,
+     "RSB_MCT_CNT": 310,
+     "RSB_MCT_TIME": "202607"
+    },
+    {
+     "RSB_LRG_CTGR": "유통",
+     "RSB_MID_CTGR": "편의점",
+     "RSB_PAYMENT_LVL": "바쁜",
+     "RSB_SH_PAYMENT_CNT": 26,
+     "RSB_SH_PAYMENT_AMT_MIN": 150000,
+     "RSB_SH_PAYMENT_AMT_MAX": 200000,
+     "RSB_MCT_CNT": 38,
+     "RSB_MCT_TIME": "202607"
+    },
+    {
+     "RSB_LRG_CTGR": "여가·오락",
+     "RSB_MID_CTGR": "스포츠/문화/레저",
+     "RSB_PAYMENT_LVL": "한산한",
+     "RSB_SH_PAYMENT_CNT": 43,
+     "RSB_SH_PAYMENT_AMT_MIN": 1000000,
+     "RSB_SH_PAYMENT_AMT_MAX": 1100000,
+     "RSB_MCT_CNT": 80,
+     "RSB_MCT_TIME": "202607"
+    },
+    {
+     "RSB_LRG_CTGR": "의료",
+     "RSB_MID_CTGR": "병원",
+     "RSB_PAYMENT_LVL": "한산한",
+     "RSB_SH_PAYMENT_CNT": 7,
+     "RSB_SH_PAYMENT_AMT_MIN": 150000,
+     "RSB_SH_PAYMENT_AMT_MAX": 200000,
+     "RSB_MCT_CNT": 101,
+     "RSB_MCT_TIME": "202607"
+    },
+    {
+     "RSB_LRG_CTGR": "의료",
+     "RSB_MID_CTGR": "약국",
+     "RSB_PAYMENT_LVL": "한산한",
+     "RSB_SH_PAYMENT_CNT": 4,
+     "RSB_SH_PAYMENT_AMT_MIN": 50000,
+     "RSB_SH_PAYMENT_AMT_MAX": 60000,
+     "RSB_MCT_CNT": 24,
+     "RSB_MCT_TIME": "202607"
+    }
+   ],
+   "CMRCL_MALE_RATE": 44.0,
+   "CMRCL_FEMALE_RATE": 56.0,
+   "CMRCL_10_RATE": 2.3,
+   "CMRCL_20_RATE": 16.1,
+   "CMRCL_30_RATE": 24.9,
+   "CMRCL_40_RATE": 21.4,
+   "CMRCL_50_RATE": 16.1,
+   "CMRCL_60_RATE": 19.2,
+   "CMRCL_PERSONAL_RATE": 87.8,
+   "CMRCL_CORPORATION_RATE": 12.2,
+   "CMRCL_TIME": "20260811 1740"
+  },
+  "LIVE_DST_MESSAGE": [],
+  "LIVE_YNA_NEWS": []
+ }
+}
