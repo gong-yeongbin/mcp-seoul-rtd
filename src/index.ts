@@ -1,17 +1,14 @@
 #!/usr/bin/env node
-// MCP 서버 엔트리. tool 을 등록하고 stdio 로 요청을 받는다.
+// MCP 서버 엔트리. 설정을 읽고 stdio 로 서버를 띄운다.
 
-import { McpServer } from '@modelcontextprotocol/server';
 import { StdioServerTransport } from '@modelcontextprotocol/server/stdio';
-
-export function buildServer(): McpServer {
-    const server = new McpServer({ name: 'mcp-seoul-rtd', version: '0.1.0' });
-    // tool 은 사용할 API 가 확정되면 등록한다.
-    return server;
-}
+import { loadConfig } from './config.ts';
+import { createClient } from './client.ts';
+import { buildServer } from './server.ts';
 
 async function main() {
-    const server = buildServer();
+    const config = loadConfig();
+    const server = buildServer(createClient(config.apiKey));
     await server.connect(new StdioServerTransport());
     // stdout 은 JSON-RPC 전용이다. 로그는 반드시 stderr 로 보낸다.
     console.error('mcp-seoul-rtd 시작.');
