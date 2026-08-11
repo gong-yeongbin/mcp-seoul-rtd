@@ -20,6 +20,16 @@
 
 ## Claude Code / Claude Desktop 설정
 
+Claude Code 는 CLI 로 등록할 수 있습니다.
+
+```bash
+claude mcp add seoul-rtd -e SEOUL_OPEN_API_KEY=<발급받은 인증키> -- npx -y mcp-seoul-rtd
+```
+
+기본으로 현재 프로젝트의 local 범위에 저장됩니다. `--scope user` 를 주면 모든 프로젝트에서, `--scope project` 를 주면 `.mcp.json` 파일로 팀과 공유할 수 있습니다. 등록 후 `/mcp` 로 연결 상태를 확인하세요.
+
+Claude Desktop 은 `claude_desktop_config.json` (설정 → Developer → Edit Config) 에 아래 블록을 추가합니다.
+
 ```json
 {
   "mcpServers": {
