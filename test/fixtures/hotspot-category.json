@@ -1,0 +1,14 @@
+{
+    "pageRange": [1],
+    "total": 121,
+    "row": [
+        { "area_nm": "DDP(동대문디자인플라자)", "congestion_color": "#00D369", "x": "37.56698802202402", "y": "127.01028923736118", "area_congest_lvl": "여유", "category": "발달상권", "area_congest_num": 1 },
+        { "area_nm": "가락시장", "congestion_color": "#FFB100", "x": "37.49346831098777", "y": "127.11189565048856", "area_congest_lvl": "보통", "category": "발달상권", "area_congest_num": 2 },
+        { "area_nm": "가로수길", "congestion_color": "#FF8040", "x": "37.521389126042834", "y": "127.02357225275368", "area_congest_lvl": "약간 붐빔", "category": "발달상권", "area_congest_num": 3 },
+        { "area_nm": "보라매공원", "congestion_color": "#DD1F3D", "x": "37.4926", "y": "126.9199", "area_congest_lvl": "붐빔", "category": "공원", "area_congest_num": 4 },
+        { "area_nm": "강남역", "congestion_color": "#FF8040", "x": "37.49885662696318", "y": "127.02813375850457", "area_congest_lvl": "약간 붐빔", "category": "인구밀집지역", "area_congest_num": 3 },
+        { "area_nm": "광화문·덕수궁", "congestion_color": "#FFB100", "x": "37.5687", "y": "126.9773", "area_congest_lvl": "보통", "category": "고궁·문화유산", "area_congest_num": 2 },
+        { "area_nm": "종로·청계 관광특구", "congestion_color": "#FF8040", "x": "37.5704", "y": "126.9921", "area_congest_lvl": "약간 붐빔", "category": "관광특구", "area_congest_num": 3 },
+        { "area_nm": "난지한강공원", "congestion_color": "#00D369", "x": "37.5665", "y": "126.8752", "area_congest_lvl": "여유", "category": "공원", "area_congest_num": 1 }
+    ]
+}

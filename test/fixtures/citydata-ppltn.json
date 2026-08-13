@@ -1,0 +1,19 @@
+{
+    "SeoulRtd.citydata_ppltn": [
+        {
+            "AREA_NM": "광화문·덕수궁",
+            "AREA_CD": "POI009",
+            "AREA_CONGEST_LVL": "약간 붐빔",
+            "AREA_CONGEST_MSG": "사람들이 몰려있을 가능성이 크고 붐빈다고 느낄 수 있어요.",
+            "AREA_PPLTN_MIN": "32000",
+            "AREA_PPLTN_MAX": "34000",
+            "MALE_PPLTN_RATE": "53.2",
+            "FEMALE_PPLTN_RATE": "46.8",
+            "RESNT_PPLTN_RATE": "48.3",
+            "NON_RESNT_PPLTN_RATE": "51.7",
+            "REPLACE_YN": "N",
+            "PPLTN_TIME": "2026-08-13 09:05",
+            "FCST_YN": "Y"
+        }
+    ]
+}
