@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.1](https://github.com/gong-yeongbin/mcp-seoul-rtd/compare/v0.3.0...v0.3.1) (2026-08-13)
+
+### Bug Fixes
+
+* 출처표시 전면 적용 및 서버 버전 package.json 동기화 ([1165736](https://github.com/gong-yeongbin/mcp-seoul-rtd/commit/1165736e990ea1aa9d224c5ac257cd8b20906e1f))
+
 ## [0.3.0](https://github.com/gong-yeongbin/mcp-seoul-rtd/compare/v0.2.0...v0.3.0) (2026-08-13)
 
 ### Features
