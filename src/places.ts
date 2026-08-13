@@ -5,6 +5,8 @@ export interface Place {
     category: string;
 }
 
+export const PLACE_CATEGORIES = ['관광특구', '고궁·문화유산', '인구밀집지역', '발달상권', '공원'] as const;
+
 // 서울 실시간 도시데이터 대시보드(data.seoul.go.kr/SeoulRtd) 기준. 2026-08-11 확보.
 export const PLACES: readonly Place[] = [
     { name: '강남 MICE 관광특구', category: '관광특구' },

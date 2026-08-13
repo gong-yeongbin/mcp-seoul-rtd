@@ -13,6 +13,15 @@ function stubClient(over: Partial<CitydataClient> = {}): CitydataClient {
             AREA_CD: 'POI009',
             LIVE_PPLTN_STTS: [{ AREA_CONGEST_LVL: '보통', AREA_PPLTN_MIN: '38000', AREA_PPLTN_MAX: '40000' }],
         }),
+        fetchCongestionRanking: async () => ({
+            source: 'dashboard' as const,
+            entries: [
+                { name: '보라매공원', category: '공원', level: '붐빔', levelNum: 4 },
+                { name: '강남역', category: '인구밀집지역', level: '약간 붐빔', levelNum: 3 },
+                { name: '난지한강공원', category: '공원', level: '여유', levelNum: 1 },
+            ],
+            failedCount: 0,
+        }),
         ...over,
     };
 }
@@ -26,10 +35,10 @@ async function connect(citydata: CitydataClient) {
     return { client, close: () => client.close() };
 }
 
-test('tool 2개를 노출한다', async () => {
+test('tool 3개를 노출한다', async () => {
     const { client, close } = await connect(stubClient());
     const { tools } = await client.listTools();
-    assert.deepEqual(tools.map((t) => t.name).sort(), ['get_citydata', 'list_places']);
+    assert.deepEqual(tools.map((t) => t.name).sort(), ['get_citydata', 'get_congestion_ranking', 'list_places']);
     assert.ok(tools.every((t) => t.annotations?.readOnlyHint === true));
     await close();
 });
@@ -74,6 +83,43 @@ test('get_citydata 는 categories 로 섹션을 제한한다', async () => {
     const text = JSON.stringify(r.content);
     assert.match(text, /실시간 인구/);
     assert.doesNotMatch(text, /## 날씨/);
+    await close();
+});
+
+test('get_congestion_ranking 은 순위를 렌더링한다', async () => {
+    const { client, close } = await connect(stubClient());
+    const r = await client.callTool({ name: 'get_congestion_ranking', arguments: {} });
+    const text = JSON.stringify(r.content);
+    assert.match(text, /서울 실시간 혼잡도 순위/);
+    assert.match(text, /1\. 보라매공원/);
+    assert.match(text, /출처: 서울 열린데이터광장\(서울특별시\)/);
+    await close();
+});
+
+test('get_congestion_ranking 은 top 과 category 를 적용한다', async () => {
+    const { client, close } = await connect(stubClient());
+    const r = await client.callTool({
+        name: 'get_congestion_ranking',
+        arguments: { top: 1, category: '공원' },
+    });
+    const text = JSON.stringify(r.content);
+    assert.match(text, /상위 1곳 \/ 전체 2곳 — 공원/);
+    assert.match(text, /보라매공원/);
+    assert.doesNotMatch(text, /강남역/);
+    await close();
+});
+
+test('혼잡도 조회 실패는 isError 로 온다', async () => {
+    const { client, close } = await connect(
+        stubClient({
+            fetchCongestionRanking: async () => {
+                throw new Error('공식 citydata_ppltn API 조회가 전부 실패했습니다.');
+            },
+        }),
+    );
+    const r = await client.callTool({ name: 'get_congestion_ranking', arguments: {} });
+    assert.equal(r.isError, true);
+    assert.match(JSON.stringify(r.content), /전부 실패/);
     await close();
 });
 

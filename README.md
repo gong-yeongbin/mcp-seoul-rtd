@@ -8,6 +8,7 @@
 | --- | --- |
 | `list_places` | 실시간 도시데이터가 제공되는 121개 장소 목록. `query` 로 부분 일치 필터 |
 | `get_citydata` | 한 장소의 실시간 도시데이터 조회. `place` 는 장소명(부분 일치)/장소코드, `categories` 로 섹션 선택 |
+| `get_congestion_ranking` | 121개 장소를 현재 혼잡도 순으로 정렬. `top` 으로 상위 개수(기본 10), `category` 로 분류 필터 |
 
 `categories` 값: `population`, `traffic`, `parking`, `subway`, `bus`, `bike`, `charger`, `weather`, `event`, `commercial`, `accident`, `alert`, `news`
 

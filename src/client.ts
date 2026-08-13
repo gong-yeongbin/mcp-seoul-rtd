@@ -1,5 +1,7 @@
 // 서울 열린데이터광장 citydata API 를 호출하는 fetch 클라이언트와 응답 타입
 
+import { fetchCongestionSnapshot, type CongestionSnapshot } from './congestion.ts';
+
 const BASE_URL = 'http://openapi.seoul.go.kr:8088';
 
 /** 응답 중 format.ts 가 렌더링하는 필드만 타입으로 정의한다. 나머지는 무시된다. */
@@ -173,6 +175,7 @@ interface ResultEnvelope {
 
 export interface CitydataClient {
     fetchCitydata(area: string): Promise<Citydata>;
+    fetchCongestionRanking(): Promise<CongestionSnapshot>;
 }
 
 export function createClient(apiKey: string, fetchFn: typeof fetch = globalThis.fetch): CitydataClient {
@@ -195,5 +198,6 @@ export function createClient(apiKey: string, fetchFn: typeof fetch = globalThis.
             }
             return body.CITYDATA;
         },
+        fetchCongestionRanking: () => fetchCongestionSnapshot(apiKey, fetchFn),
     };
 }

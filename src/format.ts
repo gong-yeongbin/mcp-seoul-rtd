@@ -1,6 +1,7 @@
 // citydata 응답을 LLM 이 읽기 쉬운 compact 텍스트로 렌더링하는 모듈
 
 import type { Citydata } from './client.ts';
+import type { CongestionSnapshot } from './congestion.ts';
 import type { Place } from './places.ts';
 
 export const CATEGORIES = [
@@ -258,5 +259,37 @@ export function formatPlaceList(places: readonly Place[], query?: string): strin
         lines.push(`${p.name} | ${p.category}`);
     }
     lines.push('', `${filtered.length}곳.`);
+    return lines.join('\n');
+}
+
+const LEVEL_ORDER = ['붐빔', '약간 붐빔', '보통', '여유'] as const;
+
+export function formatCongestionRanking(s: CongestionSnapshot, top: number, category?: string): string {
+    const filtered = category ? s.entries.filter((e) => e.category === category) : s.entries;
+    if (filtered.length === 0) {
+        return `'${category}' 분류에 해당하는 혼잡도 데이터가 없습니다.`;
+    }
+    const shown = filtered.slice(0, top);
+    const scope = category ? ` — ${category}` : '';
+    const lines = [`# 서울 실시간 혼잡도 순위 (상위 ${shown.length}곳 / 전체 ${filtered.length}곳${scope})`, ''];
+    shown.forEach((e, i) => {
+        const ppltn = e.ppltnMin && e.ppltnMax ? ` | ${e.ppltnMin}~${e.ppltnMax}명` : '';
+        lines.push(`${i + 1}. ${e.name} | ${e.level} | ${e.category}${ppltn}`);
+    });
+    const dist = LEVEL_ORDER.map((lvl) => ({ lvl, n: filtered.filter((e) => e.level === lvl).length }))
+        .filter((d) => d.n > 0)
+        .map((d) => `${d.lvl} ${d.n}곳`)
+        .join(' | ');
+    lines.push('', `단계별 분포: ${dist}`);
+    if (s.source === 'dashboard') {
+        lines.push('주의: 같은 단계 내 순서는 의미가 없습니다 (붐빔 > 약간 붐빔 > 보통 > 여유).');
+        lines.push('데이터 경로: SeoulRtd 대시보드');
+    } else {
+        const time = shown[0]?.time;
+        if (time) lines.push(`기준 시각: ${time}`);
+        if (s.failedCount > 0) lines.push(`조회 실패 ${s.failedCount}곳 제외.`);
+        lines.push('데이터 경로: 공식 citydata_ppltn API');
+    }
+    lines.push('출처: 서울 열린데이터광장(서울특별시)');
     return lines.join('\n');
 }

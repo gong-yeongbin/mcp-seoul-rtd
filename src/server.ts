@@ -3,8 +3,8 @@
 import { McpServer } from '@modelcontextprotocol/server';
 import * as z from 'zod';
 import type { CitydataClient } from './client.ts';
-import { PLACES, resolvePlace } from './places.ts';
-import { CATEGORIES, formatCitydata, formatPlaceList } from './format.ts';
+import { PLACES, PLACE_CATEGORIES, resolvePlace } from './places.ts';
+import { CATEGORIES, formatCitydata, formatCongestionRanking, formatPlaceList } from './format.ts';
 
 /** tool 핸들러의 예외를 MCP 에러 응답으로 바꾼다. API 오류가 프로세스를 죽이면 안 된다. */
 async function guard(fn: () => Promise<string>) {
@@ -57,6 +57,26 @@ export function buildServer(client: CitydataClient): McpServer {
                 const area = resolvePlace(place);
                 const data = await client.fetchCitydata(area);
                 return formatCitydata(data, categories ?? CATEGORIES);
+            }),
+    );
+
+    server.registerTool(
+        'get_congestion_ranking',
+        {
+            title: '혼잡도 순위',
+            description:
+                '서울 주요 121개 장소를 현재 혼잡도(붐빔 > 약간 붐빔 > 보통 > 여유) 순으로 정렬해 반환합니다. ' +
+                '"지금 가장 붐비는 곳이 어디야?" 같은 질문에 사용하세요. category 로 분류를 좁힐 수 있습니다.',
+            inputSchema: z.object({
+                top: z.number().int().min(1).max(121).optional().describe('상위 몇 곳을 표시할지. 기본 10'),
+                category: z.enum(PLACE_CATEGORIES).optional().describe('분류 필터. 생략하면 전체'),
+            }),
+            annotations: { readOnlyHint: true },
+        },
+        ({ top, category }) =>
+            guard(async () => {
+                const snapshot = await client.fetchCongestionRanking();
+                return formatCongestionRanking(snapshot, top ?? 10, category);
             }),
     );
 

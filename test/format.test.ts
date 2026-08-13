@@ -3,8 +3,9 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { CATEGORIES, formatCitydata, formatPlaceList } from '../src/format.ts';
+import { CATEGORIES, formatCitydata, formatCongestionRanking, formatPlaceList } from '../src/format.ts';
 import type { Citydata } from '../src/client.ts';
+import type { CongestionSnapshot } from '../src/congestion.ts';
 
 const fixture = JSON.parse(
     readFileSync(new URL('./fixtures/citydata.json', import.meta.url), 'utf8'),
@@ -61,4 +62,57 @@ test('formatPlaceList 는 query 로 필터링한다', () => {
     assert.match(text, /강남역/);
     assert.doesNotMatch(text, /광화문/);
     assert.match(formatPlaceList(places, '없는곳'), /해당하는 장소가 없습니다/);
+});
+
+const dashboardSnapshot: CongestionSnapshot = {
+    source: 'dashboard',
+    entries: [
+        { name: '보라매공원', category: '공원', level: '붐빔', levelNum: 4 },
+        { name: '강남역', category: '인구밀집지역', level: '약간 붐빔', levelNum: 3 },
+        { name: '가락시장', category: '발달상권', level: '보통', levelNum: 2 },
+        { name: '난지한강공원', category: '공원', level: '여유', levelNum: 1 },
+    ],
+    failedCount: 0,
+};
+
+test('formatCongestionRanking 은 순위·분포·출처를 렌더링한다', () => {
+    const text = formatCongestionRanking(dashboardSnapshot, 10);
+    assert.match(text, /# 서울 실시간 혼잡도 순위 \(상위 4곳 \/ 전체 4곳\)/);
+    assert.match(text, /1\. 보라매공원 \| 붐빔 \| 공원/);
+    assert.match(text, /단계별 분포: 붐빔 1곳 \| 약간 붐빔 1곳 \| 보통 1곳 \| 여유 1곳/);
+    assert.match(text, /같은 단계 내 순서는 의미가 없습니다/);
+    assert.match(text, /데이터 경로: SeoulRtd 대시보드/);
+    assert.match(text, /출처: 서울 열린데이터광장\(서울특별시\)/);
+});
+
+test('formatCongestionRanking 은 top 으로 상위만 자른다', () => {
+    const text = formatCongestionRanking(dashboardSnapshot, 2);
+    assert.match(text, /상위 2곳 \/ 전체 4곳/);
+    assert.match(text, /2\. 강남역/);
+    assert.doesNotMatch(text, /3\. 가락시장/);
+});
+
+test('formatCongestionRanking 은 category 로 필터링한다', () => {
+    const text = formatCongestionRanking(dashboardSnapshot, 10, '공원');
+    assert.match(text, /전체 2곳 — 공원/);
+    assert.match(text, /보라매공원/);
+    assert.doesNotMatch(text, /강남역/);
+    assert.match(formatCongestionRanking({ ...dashboardSnapshot, entries: [] }, 10, '공원'), /해당하는 혼잡도 데이터가 없습니다/);
+});
+
+test('formatCongestionRanking 폴백 모드는 인구수·기준 시각·실패 수를 표기한다', () => {
+    const official: CongestionSnapshot = {
+        source: 'official',
+        entries: [
+            { name: '보라매공원', category: '공원', level: '붐빔', levelNum: 4, ppltnMin: '80000', ppltnMax: '90000', time: '2026-08-13 09:05' },
+            { name: '강남역', category: '인구밀집지역', level: '붐빔', levelNum: 4, ppltnMin: '45000', ppltnMax: '50000', time: '2026-08-13 09:05' },
+        ],
+        failedCount: 3,
+    };
+    const text = formatCongestionRanking(official, 10);
+    assert.match(text, /1\. 보라매공원 \| 붐빔 \| 공원 \| 80000~90000명/);
+    assert.match(text, /기준 시각: 2026-08-13 09:05/);
+    assert.match(text, /조회 실패 3곳 제외\./);
+    assert.match(text, /데이터 경로: 공식 citydata_ppltn API/);
+    assert.doesNotMatch(text, /같은 단계 내 순서는 의미가 없습니다/);
 });
