@@ -2,6 +2,7 @@
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { Client, InMemoryTransport } from '@modelcontextprotocol/client';
 import { buildServer } from '../src/server.ts';
 import type { Citydata, CitydataClient } from '../src/client.ts';
@@ -34,6 +35,15 @@ async function connect(citydata: CitydataClient) {
     await Promise.all([server.connect(serverT), client.connect(clientT)]);
     return { client, close: () => client.close() };
 }
+
+test('서버 버전이 package.json 과 일치한다', async () => {
+    const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')) as {
+        version: string;
+    };
+    const { client, close } = await connect(stubClient());
+    assert.equal(client.getServerVersion()?.version, pkg.version);
+    await close();
+});
 
 test('tool 3개를 노출한다', async () => {
     const { client, close } = await connect(stubClient());

@@ -1,5 +1,6 @@
 // MCP 서버 구성. tool 등록과 핸들러를 담당한다.
 
+import { createRequire } from 'node:module';
 import { McpServer } from '@modelcontextprotocol/server';
 import * as z from 'zod';
 import type { CitydataClient } from './client.ts';
@@ -16,8 +17,12 @@ async function guard(fn: () => Promise<string>) {
     }
 }
 
+// release-it 이 버전을 자동으로 올리므로 하드코딩하지 않고 package.json 에서 읽는다.
+// src/(테스트)와 dist/(빌드) 모두 루트 package.json 의 한 단계 아래라 경로가 같다.
+const { version } = createRequire(import.meta.url)('../package.json') as { version: string };
+
 export function buildServer(client: CitydataClient): McpServer {
-    const server = new McpServer({ name: 'mcp-seoul-rtd', version: '0.1.0' });
+    const server = new McpServer({ name: 'mcp-seoul-rtd', version });
 
     server.registerTool(
         'list_places',

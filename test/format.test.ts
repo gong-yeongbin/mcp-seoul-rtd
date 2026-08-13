@@ -18,6 +18,7 @@ test('전체 카테고리를 렌더링하면 모든 섹션 헤더가 나온다',
     for (const title of ['실시간 인구', '도로소통', '주차장', '지하철', '버스', '따릉이', '전기차충전소', '날씨', '문화행사', '상권', '사고통제', '긴급재난문자', '연합뉴스']) {
         assert.match(text, new RegExp(`## ${title}`), `${title} 섹션이 없습니다`);
     }
+    assert.match(text, /출처: 서울 열린데이터광장\(서울특별시\)/);
 });
 
 test('카테고리를 고르면 그 섹션만 나온다', () => {
@@ -51,6 +52,7 @@ test('formatPlaceList 는 전체 목록과 개수를 렌더링한다', () => {
     ]);
     assert.match(text, /광화문·덕수궁 \| 고궁·문화유산/);
     assert.match(text, /2곳\./);
+    assert.match(text, /출처: 서울 열린데이터광장\(서울특별시\)/);
 });
 
 test('formatPlaceList 는 query 로 필터링한다', () => {

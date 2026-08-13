@@ -242,10 +242,13 @@ const FORMATTERS: Record<Category, (d: Citydata) => string> = {
     news: formatNews,
 };
 
+// 공공누리 제1유형: 데이터를 노출하는 모든 출력에 출처표시가 필요하다.
+const ATTRIBUTION = '출처: 서울 열린데이터광장(서울특별시)';
+
 export function formatCitydata(d: Citydata, categories: readonly Category[]): string {
     const header = `# ${d.AREA_NM ?? '(장소명 없음)'} (${d.AREA_CD ?? '-'})`;
     const sections = categories.map((c) => FORMATTERS[c](d));
-    return [header, ...sections].join('\n\n');
+    return [header, ...sections, ATTRIBUTION].join('\n\n');
 }
 
 export function formatPlaceList(places: readonly Place[], query?: string): string {
@@ -258,7 +261,7 @@ export function formatPlaceList(places: readonly Place[], query?: string): strin
     for (const p of filtered) {
         lines.push(`${p.name} | ${p.category}`);
     }
-    lines.push('', `${filtered.length}곳.`);
+    lines.push('', `${filtered.length}곳.`, ATTRIBUTION);
     return lines.join('\n');
 }
 
@@ -290,6 +293,6 @@ export function formatCongestionRanking(s: CongestionSnapshot, top: number, cate
         if (s.failedCount > 0) lines.push(`조회 실패 ${s.failedCount}곳 제외.`);
         lines.push('데이터 경로: 공식 citydata_ppltn API');
     }
-    lines.push('출처: 서울 열린데이터광장(서울특별시)');
+    lines.push(ATTRIBUTION);
     return lines.join('\n');
 }
