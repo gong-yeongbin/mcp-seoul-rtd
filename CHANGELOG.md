@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/gong-yeongbin/mcp-seoul-rtd/compare/v0.2.0...v0.3.0) (2026-08-13)
+
+### Features
+
+* 혼잡도 순위 tool(get_congestion_ranking) 추가 ([0ad8460](https://github.com/gong-yeongbin/mcp-seoul-rtd/commit/0ad84602a045b8e30a1f1b686c67c248f371c9b2))
+* 혼잡도 순위 tool(get_congestion_ranking) 추가 ([63aed47](https://github.com/gong-yeongbin/mcp-seoul-rtd/commit/63aed47f6cdf2dc9409f1702686d75e7e268c45f))
+
 ## 0.2.0 (2026-08-11)
 
 ### Features
