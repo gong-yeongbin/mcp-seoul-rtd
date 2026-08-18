@@ -45,21 +45,6 @@ Claude Desktop 은 `claude_desktop_config.json` (설정 → Developer → Edit C
 }
 ```
 
-## 개발
-
-```bash
-pnpm install
-pnpm typecheck   # 타입 검사
-pnpm test        # node --test (Node 23.6+ 필요)
-pnpm build       # tsc → dist/
-```
-
-테스트는 라이브 API 를 호출하지 않고 fixture 와 스텁으로 동작합니다.
-
-## 릴리즈
-
-main 에 push 되면 GitHub Actions 가 conventional commit 타입으로 버전을 결정해 npm 에 배포합니다. repo secret 에 `NPM_TOKEN` 이 필요합니다.
-
 ## 라이선스
 
 - 이 패키지의 코드는 MIT 라이선스입니다.
