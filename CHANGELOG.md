@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.0](https://github.com/gong-yeongbin/mcp-seoul-rtd/compare/v0.3.2...v1.0.0) (2026-08-18)
+
+### ⚠ BREAKING CHANGES
+
+* tool 인터페이스 변경 없이 1.0.0 정식 버전을 확정한다.
+  0.x 프리릴리스 구간을 종료하고 이후 tool 이름·인자·출력 구조 변경은
+  semver major 로 관리한다.
+
+### Documentation
+
+* 개발·릴리즈 섹션 제거하고 사용자 문서만 남김 ([a5c1895](https://github.com/gong-yeongbin/mcp-seoul-rtd/commit/a5c1895633bde507f721da05099287ba6769e368))
+
 ## [0.3.2](https://github.com/gong-yeongbin/mcp-seoul-rtd/compare/v0.3.1...v0.3.2) (2026-08-13)
 
 ### Bug Fixes

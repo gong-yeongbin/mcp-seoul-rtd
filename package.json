@@ -1,6 +1,6 @@
 {
   "name": "mcp-seoul-rtd",
-  "version": "0.3.2",
+  "version": "1.0.0",
   "description": "MCP server for Seoul real-time data",
   "license": "MIT",
   "author": "공영빈 <youngbin816@gmail.com>",
